@@ -1,0 +1,7 @@
+<class_libraries>
+  <library path="mppi_controller">
+    <class type="mppi_controller::MppiController" base_class_type="nav2_core::Controller">
+      <description>GPU-accelerated MPPI controller for Nav2 (CUDA rollouts)</description>
+    </class>
+  </library>
+</class_libraries>

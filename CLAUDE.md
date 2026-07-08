@@ -5,7 +5,7 @@
 ## 架构
 
 ```
-Nav2 controller_server → CudaMppiController (不改)
+Nav2 controller_server → MppiController (不改)
   → MppiGpu (PIMPL) → MppiSolver (4-step 编排)
     → IMppiBackend → CPU Backend (OpenMP) / OpenCL Backend (Mali-G610)
 ```
@@ -28,15 +28,15 @@ cd ros2_ws
 ## 项目结构
 
 ```
-ros2_ws/src/cuda_mppi_controller/
-  include/cuda_mppi_controller/
-    cuda_mppi_controller.hpp   # Nav2 Controller 插件 (不改)
+ros2_ws/src/mppi_controller/
+  include/mppi_controller/
+    mppi_controller.hpp   # Nav2 Controller 插件 (不改)
     nav2_compat.hpp            # Nav2 Humble 兼容
     mppi_gpu.hpp               # MppiParams / MppiResult / MppiGpu
     mppi_backend.hpp           # IMppiBackend 抽象接口
     mppi_solver.hpp            # 4-step pipeline 编排
   src/
-    cuda_mppi_controller.cpp   # Nav2 生命周期
+    mppi_controller.cpp   # Nav2 生命周期
     mppi_optimizer.cpp         # PIMPL + 后端工厂
     mppi_solver.cpp            # softmin / warm-start / retreat
     backends/
@@ -49,7 +49,7 @@ ros2_ws/src/cuda_mppi_controller/
       mppi_rng.cl              # XOROSHIRO128+ PRNG
       mppi_distance_field.cl   # ESDF 距离场
   config/
-    cuda_mppi_params.example.yaml
+    mppi_params.example.yaml
     nav2_loopback_demo*.yaml (×3)
   test/
     mppi_opencl_standalone.cpp
@@ -91,7 +91,7 @@ Solver::solve()
 
 ## 编码约定
 
-- namespace: `cuda_mppi_controller`
+- namespace: `mppi_controller`
 - IMppiBackend: 纯虚接口，仅 C++，无 GPU 头文件暴露
 - Kernel: OpenCL C，`__constant` 参数块，`image2d_t` 代价地图
 - MppiSolver: 纯 C++，不依赖 GPU API

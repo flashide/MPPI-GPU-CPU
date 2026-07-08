@@ -29,10 +29,10 @@ cd ros2_ws
 
 ```bash
 # CPU 先跑通
-MPPI_BACKEND=cpu ./install/cuda_mppi_controller/lib/cuda_mppi_controller/mppi_opencl_standalone 2048
+MPPI_BACKEND=cpu ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone 2048
 
 # GPU 验证
-MPPI_BACKEND=opencl ./install/cuda_mppi_controller/lib/cuda_mppi_controller/mppi_opencl_standalone 2048
+MPPI_BACKEND=opencl ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone 2048
 ```
 
 ## Nav2 集成
@@ -42,7 +42,7 @@ MPPI_BACKEND=opencl ./install/cuda_mppi_controller/lib/cuda_mppi_controller/mppi
 controller_server:
   ros__parameters:
     FollowPath:
-      plugin: "cuda_mppi_controller::CudaMppiController"
+      plugin: "mppi_controller::MppiController"
       batch_size: 2048
       time_steps: 56
       model_dt: 0.05

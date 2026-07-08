@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build script for cuda_mppi_controller with OpenCL backend on RK3588.
+# Build script for mppi_controller with OpenCL backend on RK3588.
 #
 # Prerequisites:
 #   sudo apt install -y opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev
@@ -31,7 +31,7 @@ case "${BUILD_TYPE,,}" in
     ;;
 esac
 
-echo "=== Building cuda_mppi_controller for RK3588 ==="
+echo "=== Building mppi_controller for RK3588 ==="
 echo "    Build type:  ${BUILD_TYPE}"
 echo "    Backend:     ${BACKEND_MODE}"
 
@@ -92,7 +92,7 @@ esac
 # Build
 cd "$(dirname "$0")"
 colcon build \
-  --packages-select cuda_mppi_controller \
+  --packages-select mppi_controller \
   --cmake-args "${CMAKE_ARGS[@]}" \
   --event-handlers console_direct+
 
@@ -101,11 +101,11 @@ echo "=== Build complete ==="
 echo ""
 echo "Run standalone validation:"
 echo "  source install/setup.bash"
-echo "  MPPI_BACKEND=${BACKEND_MODE} ./install/cuda_mppi_controller/lib/cuda_mppi_controller/mppi_opencl_standalone"
+echo "  MPPI_BACKEND=${BACKEND_MODE} ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone"
 echo ""
 echo "Run with ROS2 (add to nav2_params.yaml):"
 echo "  FollowPath:"
-echo "    plugin: \"cuda_mppi_controller::CudaMppiController\""
+echo "    plugin: \"mppi_controller::MppiController\""
 echo "    gpu_backend: \"${BACKEND_MODE}\""
 echo "    batch_size: 2048"
-echo "    # ... (see config/cuda_mppi_params.example.yaml)"
+echo "    # ... (see config/mppi_params.example.yaml)"
