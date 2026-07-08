@@ -1,0 +1,24 @@
+# Build
+build/
+bin/
+lib/
+install/
+log/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc
+
+# ROS2
+*.pyc
+*.egg-info/
+
+# OS
+.DS_Store
+Thumbs.db
