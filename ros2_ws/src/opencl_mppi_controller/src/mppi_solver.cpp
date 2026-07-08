@@ -10,7 +10,7 @@
 //   - retreat / recovery logic
 //   - statistics aggregation
 
-#include "mppi_controller/mppi_solver.hpp"
+#include "opencl_mppi_controller/mppi_solver.hpp"
 
 #include <algorithm>
 #include <cmath>

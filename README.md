@@ -1,4 +1,4 @@
-# MPPI-GPU-CPU
+# opencl_mppi_controller
 
 RK3588 机器狗 MPPI 控制器，OpenCL Mali-G610 GPU 加速 + CPU 回退。
 
@@ -29,10 +29,10 @@ cd ros2_ws
 
 ```bash
 # CPU 先跑通
-MPPI_BACKEND=cpu ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone 2048
+MPPI_BACKEND=cpu ./install/opencl_mppi_controller/lib/opencl_mppi_controller/mppi_opencl_standalone 2048
 
 # GPU 验证
-MPPI_BACKEND=opencl ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone 2048
+MPPI_BACKEND=opencl ./install/opencl_mppi_controller/lib/opencl_mppi_controller/mppi_opencl_standalone 2048
 ```
 
 ## Nav2 集成

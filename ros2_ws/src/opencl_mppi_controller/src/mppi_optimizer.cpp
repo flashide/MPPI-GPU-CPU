@@ -4,8 +4,8 @@
 // This file replaces the original monolithic mppi_gpu.cu when the OpenCL
 // or CPU backend is selected (MPPI_USE_CUDA=OFF).
 
-#include "mppi_controller/mppi_gpu.hpp"
-#include "mppi_controller/mppi_solver.hpp"
+#include "opencl_mppi_controller/mppi_gpu.hpp"
+#include "opencl_mppi_controller/mppi_solver.hpp"
 
 #include <cstdlib>
 #include <memory>

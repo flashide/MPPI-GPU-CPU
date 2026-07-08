@@ -7,8 +7,8 @@
 //
 // Pure C++ interface — no GPU headers exposed.
 
-#ifndef mppi_controller__MPPI_BACKEND_HPP_
-#define mppi_controller__MPPI_BACKEND_HPP_
+#ifndef opencl_mppi_controller__MPPI_BACKEND_HPP_
+#define opencl_mppi_controller__MPPI_BACKEND_HPP_
 
 #include <cstddef>
 #include <cstdint>
@@ -131,4 +131,4 @@ public:
 
 }  // namespace mppi_controller
 
-#endif  // mppi_controller__MPPI_BACKEND_HPP_
+#endif  // opencl_mppi_controller__MPPI_BACKEND_HPP_

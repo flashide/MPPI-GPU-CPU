@@ -1,5 +1,5 @@
-#include "mppi_controller/mppi_controller.hpp"
-#include "mppi_controller/nav2_compat.hpp"
+#include "opencl_mppi_controller/mppi_controller.hpp"
+#include "opencl_mppi_controller/nav2_compat.hpp"
 
 #include <algorithm>
 #include <chrono>

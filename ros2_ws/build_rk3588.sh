@@ -1,5 +1,5 @@
 #!/bin/bash
-# Build script for mppi_controller with OpenCL backend on RK3588.
+# Build script for opencl_mppi_controller with OpenCL backend on RK3588.
 #
 # Prerequisites:
 #   sudo apt install -y opencl-headers ocl-icd-libopencl1 ocl-icd-opencl-dev
@@ -31,7 +31,7 @@ case "${BUILD_TYPE,,}" in
     ;;
 esac
 
-echo "=== Building mppi_controller for RK3588 ==="
+echo "=== Building opencl_mppi_controller for RK3588 ==="
 echo "    Build type:  ${BUILD_TYPE}"
 echo "    Backend:     ${BACKEND_MODE}"
 
@@ -92,7 +92,7 @@ esac
 # Build
 cd "$(dirname "$0")"
 colcon build \
-  --packages-select mppi_controller \
+  --packages-select opencl_mppi_controller \
   --cmake-args "${CMAKE_ARGS[@]}" \
   --event-handlers console_direct+
 
@@ -101,7 +101,7 @@ echo "=== Build complete ==="
 echo ""
 echo "Run standalone validation:"
 echo "  source install/setup.bash"
-echo "  MPPI_BACKEND=${BACKEND_MODE} ./install/mppi_controller/lib/mppi_controller/mppi_opencl_standalone"
+echo "  MPPI_BACKEND=${BACKEND_MODE} ./install/opencl_mppi_controller/lib/mppi_controller/mppi_opencl_standalone"
 echo ""
 echo "Run with ROS2 (add to nav2_params.yaml):"
 echo "  FollowPath:"

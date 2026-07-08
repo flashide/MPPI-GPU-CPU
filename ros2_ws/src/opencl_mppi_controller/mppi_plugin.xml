@@ -1,7 +1,7 @@
 <class_libraries>
-  <library path="mppi_controller">
+  <library path="opencl_mppi_controller">
     <class type="mppi_controller::MppiController" base_class_type="nav2_core::Controller">
-      <description>GPU-accelerated MPPI controller for Nav2 (CUDA rollouts)</description>
+      <description>OpenCL-accelerated MPPI controller for Nav2 (RK3588 Mali-G610)</description>
     </class>
   </library>
 </class_libraries>

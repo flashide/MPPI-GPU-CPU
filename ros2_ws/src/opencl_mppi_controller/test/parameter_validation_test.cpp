@@ -7,7 +7,7 @@
 #include <utility>
 #include <vector>
 
-#include "mppi_controller/mppi_controller.hpp"
+#include "opencl_mppi_controller/mppi_controller.hpp"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 #include "tf2_ros/buffer.h"

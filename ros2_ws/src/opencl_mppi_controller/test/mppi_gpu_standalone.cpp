@@ -10,7 +10,7 @@
 #include <string>
 #include <vector>
 
-#include "mppi_controller/mppi_gpu.hpp"
+#include "opencl_mppi_controller/mppi_gpu.hpp"
 
 namespace
 {

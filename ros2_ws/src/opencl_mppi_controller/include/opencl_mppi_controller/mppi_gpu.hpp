@@ -1,9 +1,9 @@
 // GPU MPPI optimizer core. Pure C++ interface — no ROS, no CUDA headers here.
 // The backend implementation lives behind a PIMPL (see mppi_optimizer.cpp).
-#ifndef mppi_controller__MPPI_GPU_HPP_
-#define mppi_controller__MPPI_GPU_HPP_
+#ifndef opencl_mppi_controller__MPPI_GPU_HPP_
+#define opencl_mppi_controller__MPPI_GPU_HPP_
 
-#include "mppi_controller/mppi_backend.hpp"
+#include "opencl_mppi_controller/mppi_backend.hpp"
 
 #include <memory>
 #include <string>
@@ -159,4 +159,4 @@ private:
 
 }  // namespace mppi_controller
 
-#endif  // mppi_controller__MPPI_GPU_HPP_
+#endif  // opencl_mppi_controller__MPPI_GPU_HPP_

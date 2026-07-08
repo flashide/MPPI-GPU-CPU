@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.18)
-project(mppi_controller LANGUAGES CXX)
+project(opencl_mppi_controller LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -90,7 +90,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 if(DEFINED ENV{ROS_DISTRO} AND "$ENV{ROS_DISTRO}" STREQUAL "humble")
-  target_compile_definitions(${PROJECT_NAME} PRIVATE MPPI_CONTROLLER_NAV2_HUMBLE=1)
+  target_compile_definitions(${PROJECT_NAME} PRIVATE OPENCL_MPPI_CONTROLLER_NAV2_HUMBLE=1)
 endif()
 
 # ---- test executables ----------------------------------------------------

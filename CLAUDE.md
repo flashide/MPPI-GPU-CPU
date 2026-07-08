@@ -28,8 +28,8 @@ cd ros2_ws
 ## 项目结构
 
 ```
-ros2_ws/src/mppi_controller/
-  include/mppi_controller/
+ros2_ws/src/opencl_mppi_controller/
+  include/opencl_mppi_controller/
     mppi_controller.hpp   # Nav2 Controller 插件 (不改)
     nav2_compat.hpp            # Nav2 Humble 兼容
     mppi_gpu.hpp               # MppiParams / MppiResult / MppiGpu

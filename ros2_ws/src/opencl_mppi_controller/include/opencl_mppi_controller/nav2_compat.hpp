@@ -1,10 +1,10 @@
-#ifndef mppi_controller__NAV2_COMPAT_HPP_
-#define mppi_controller__NAV2_COMPAT_HPP_
+#ifndef opencl_mppi_controller__NAV2_COMPAT_HPP_
+#define opencl_mppi_controller__NAV2_COMPAT_HPP_
 
 // Small compile-time shims so the plugin builds on Humble (pre-Iron exceptions)
 // and newer Nav2 distros without forking the controller implementation.
 
-#if defined(MPPI_CONTROLLER_NAV2_HUMBLE)
+#if defined(OPENCL_MPPI_CONTROLLER_NAV2_HUMBLE)
 #include "nav2_core/exceptions.hpp"
 namespace mppi_controller
 {
@@ -24,4 +24,4 @@ using NoValidControl = nav2_core::NoValidControl;
 }
 #endif
 
-#endif  // mppi_controller__NAV2_COMPAT_HPP_
+#endif  // opencl_mppi_controller__NAV2_COMPAT_HPP_

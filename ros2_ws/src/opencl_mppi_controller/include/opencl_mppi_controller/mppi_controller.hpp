@@ -1,5 +1,5 @@
-#ifndef mppi_controller__mppi_controller_HPP_
-#define mppi_controller__mppi_controller_HPP_
+#ifndef opencl_mppi_controller__mppi_controller_HPP_
+#define opencl_mppi_controller__mppi_controller_HPP_
 
 #include <memory>
 #include <fstream>
@@ -12,7 +12,7 @@
 #include "rclcpp_lifecycle/lifecycle_node.hpp"
 #include "tf2_ros/buffer.h"
 
-#include "mppi_controller/mppi_gpu.hpp"
+#include "opencl_mppi_controller/mppi_gpu.hpp"
 
 namespace mppi_controller
 {
@@ -90,4 +90,4 @@ private:
 
 }  // namespace mppi_controller
 
-#endif  // mppi_controller__mppi_controller_HPP_
+#endif  // opencl_mppi_controller__mppi_controller_HPP_

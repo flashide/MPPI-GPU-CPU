@@ -3,7 +3,7 @@
 // Used for validation, debugging, and GPU-failure fallback.
 // OpenMP parallelises the K trajectories.
 
-#include "mppi_controller/mppi_backend.hpp"
+#include "opencl_mppi_controller/mppi_backend.hpp"
 
 #include <algorithm>
 #include <cmath>

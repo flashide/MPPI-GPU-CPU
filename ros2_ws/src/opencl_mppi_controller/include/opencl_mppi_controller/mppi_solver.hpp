@@ -10,11 +10,11 @@
 // It holds an IMppiBackend pointer and coordinates the pipeline,
 // warm-start horizon shifting, retreat/recovery, and statistics.
 
-#ifndef mppi_controller__MPPI_SOLVER_HPP_
-#define mppi_controller__MPPI_SOLVER_HPP_
+#ifndef opencl_mppi_controller__MPPI_SOLVER_HPP_
+#define opencl_mppi_controller__MPPI_SOLVER_HPP_
 
-#include "mppi_controller/mppi_backend.hpp"
-#include "mppi_controller/mppi_gpu.hpp"
+#include "opencl_mppi_controller/mppi_backend.hpp"
+#include "opencl_mppi_controller/mppi_gpu.hpp"
 
 #include <memory>
 #include <vector>
@@ -84,4 +84,4 @@ private:
 
 }  // namespace mppi_controller
 
-#endif  // mppi_controller__MPPI_SOLVER_HPP_
+#endif  // opencl_mppi_controller__MPPI_SOLVER_HPP_

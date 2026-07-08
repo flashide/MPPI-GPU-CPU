@@ -1,4 +1,4 @@
-# mppi_controller
+# opencl_mppi_controller
 
 GPU-accelerated MPPI controller plugin for [Nav2](https://docs.nav2.org/).
 A drop-in alternative to `nav2_mppi_controller` that runs every sampled
@@ -51,7 +51,7 @@ the nav2 loopback simulation and in the **Gazebo physics simulation**
 # terminal 1 — Nav2 + Gazebo (or tb3_loopback_simulation.launch.py for the lightweight sim)
 ROS_DOMAIN_ID=101 PYTHONNOUSERSITE=1 ros2 launch nav2_bringup \
   tb3_simulation_launch.py headless:=True use_rviz:=False \
-  params_file:=$(ros2 pkg prefix mppi_controller)/share/mppi_controller/config/nav2_loopback_demo.yaml
+  params_file:=$(ros2 pkg prefix opencl_mppi_controller)/share/opencl_mppi_controller/config/nav2_loopback_demo.yaml
 
 # terminal 2 — waypoint mission + trajectory recording + GIF
 ROS_DOMAIN_ID=101 PYTHONNOUSERSITE=1 python3 scripts/run_nav2_loopback_demo.py /tmp/nav2_gz_demo amcl
@@ -99,7 +99,7 @@ cells.
 
 ```bash
 cd ros2_ws
-colcon build --packages-select mppi_controller --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --packages-select opencl_mppi_controller --cmake-args -DCMAKE_BUILD_TYPE=Release
 source install/setup.bash
 ```
 
@@ -110,16 +110,16 @@ and an NVIDIA GPU.
 
 ```bash
 # pluginlib discovery, exactly how controller_server loads it
-ros2 run mppi_controller plugin_load_test
+ros2 run opencl_mppi_controller plugin_load_test
 
 # invalid parameter rejection, no CUDA driver required
-ros2 run mppi_controller parameter_validation_test
+ros2 run opencl_mppi_controller parameter_validation_test
 
 # closed-loop synthetic scenario (wall with a gap) + solve-time report
-ros2 run mppi_controller mppi_gpu_standalone           # default K=2048
-ros2 run mppi_controller mppi_gpu_standalone 16384     # K sweep
-ros2 run mppi_controller mppi_gpu_standalone 2048 ackermann   # or omni / footprint
-ros2 run mppi_controller mppi_gpu_standalone 2048 esdf        # distance-field critic
+ros2 run opencl_mppi_controller mppi_gpu_standalone           # default K=2048
+ros2 run opencl_mppi_controller mppi_gpu_standalone 16384     # K sweep
+ros2 run opencl_mppi_controller mppi_gpu_standalone 2048 ackermann   # or omni / footprint
+ros2 run opencl_mppi_controller mppi_gpu_standalone 2048 esdf        # distance-field critic
 ```
 
 ## Use with Nav2
@@ -206,17 +206,17 @@ diagnostics, and command metadata under one output directory.
 `controller_benchmark` runs closed-loop CPU vs GPU comparisons on synthetic maps:
 
 ```bash
-ros2 run mppi_controller controller_benchmark /tmp/bench wall_gap
-ros2 run mppi_controller controller_benchmark /tmp/bench narrow_corridor
-ros2 run mppi_controller controller_benchmark /tmp/bench u_turn
-ros2 run mppi_controller controller_benchmark /tmp/bench double_gap
-ros2 run mppi_controller controller_benchmark /tmp/bench moving_crossing quick
-ros2 run mppi_controller controller_benchmark /tmp/bench all
-ros2 run mppi_controller controller_benchmark /tmp/bench double_gap quick
-ros2 run mppi_controller controller_benchmark /tmp/bench double_gap cpu_gpu
-ros2 run mppi_controller controller_benchmark /tmp/bench esdf
-ros2 run mppi_controller controller_benchmark /tmp/bench path_angle
-ros2 run mppi_controller controller_benchmark /tmp/bench curvature_speed
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench wall_gap
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench narrow_corridor
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench u_turn
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench double_gap
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench moving_crossing quick
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench all
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench double_gap quick
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench double_gap cpu_gpu
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench esdf
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench path_angle
+ros2 run opencl_mppi_controller controller_benchmark /tmp/bench curvature_speed
 ```
 
 The optional preset is `full` by default. Use `quick` for GPU K=2,048/8,192

@@ -11,7 +11,7 @@
 //   - XOROSHIRO128+ RNG (low registers, no lookup table)
 //   - fp32 throughout (Mali fp32 is 1:1 rate)
 
-#include "mppi_controller/mppi_backend.hpp"
+#include "opencl_mppi_controller/mppi_backend.hpp"
 
 #include <algorithm>
 #include <cstdio>

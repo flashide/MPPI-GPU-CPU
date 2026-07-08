@@ -12,7 +12,7 @@
 //   MPPI_BACKEND=opencl|cpu   overrides backend selection
 //   MPPI_TRACE=1              enables per-cycle verbose output
 
-#include "mppi_controller/mppi_gpu.hpp"
+#include "opencl_mppi_controller/mppi_gpu.hpp"
 
 #include <algorithm>
 #include <chrono>
